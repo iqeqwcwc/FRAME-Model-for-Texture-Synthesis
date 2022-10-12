@@ -16,3 +16,11 @@ jobs:
       
     - name: Install dependencies
       run: make build
+
+
+    - name: Upload Firmware Directory # 11. 导出固件目录
+      uses: actions/upload-artifact@master
+      if: success()
+      with:
+        name: libjulesz.so
+        path: images
